@@ -9,12 +9,12 @@ class Rocket:
         self.r_settings = r_settings
 
         # Load the ship image and get its rect.
-        self.image = pygame.image.load('images/rocket.bmp')
+        self.image = pygame.image.load('images/rocketsideways.bmp')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
         # Start each new ship at the center of the screen.
-        self.rect.centerx = self.screen_rect.centerx
+        self.rect.left = self.screen_rect.left
         self.rect.centery = self.screen_rect.centery
 
         # Store a decimal value for the ship's center
@@ -46,5 +46,5 @@ class Rocket:
         self.rect.centery = self.centery
 
     def blitme(self):
-        """Draw the ship at its current lopcation."""
+        """Draw the ship at its current location."""
         self.screen.blit(self.image, self.rect)
